@@ -285,6 +285,9 @@ void loop()
         int16_t lx = myControllers->axisX(); // Left stick X-axis
         int16_t ly = myControllers->axisY(); // Left stick Y-axis
 
+        int16_t rx = myControllers->axisRX();// Right stick X-axis
+        int16_t ry = myControllers->axisRY();// Right stick Y-axis
+
         // Read left trigger for throttle control
         int16_t L2 = myControllers->throttle(); // Left trigger
 
@@ -312,6 +315,13 @@ void loop()
 
         // Move the car
         moveCar(angle, button, maxSpeed);
+
+        //Sending right joystick values to serial monitor
+        Serial.print("<");
+        Serial.print(rx);
+        Serial.print(",");
+        Serial.print(ry);
+        Serial.println(">");
     }
     else
     {

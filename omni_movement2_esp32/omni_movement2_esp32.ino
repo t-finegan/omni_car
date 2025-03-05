@@ -316,11 +316,15 @@ void loop()
         // Move the car
         moveCar(angle, button, maxSpeed);
 
-        //Sending right joystick values to serial monitor
+        //Sending right joystick values, angle and maxSpeed to serial monitor with formatting
         Serial.print("<");
         Serial.print(rx);
         Serial.print(",");
         Serial.print(ry);
+        Serial.print(",");
+        Serial.print(angle);
+        Serial.print(",");
+        Serial.print(maxSpeed);
         Serial.println(">");
     }
     else
